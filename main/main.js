@@ -1,4 +1,4 @@
-music_name = "sound/MASTERING LALALA.wav"
+music_name = "main/sound/MASTERING LALALA.wav"
 let play_btn = document.querySelector("#play");
 let prev_btn = document.querySelector("#pre");
 let next_btn = document.querySelector("#next");
@@ -21,18 +21,18 @@ function playSong(){
             isPlaying = true;
             total_time = song.duration;
             range.max = total_time;
-            play_img.src = "image/pause.png";
+            play_img.src = "main/image/pause.png";
         }else{
             song.pause();
             isPlaying = false;
-            play_img.src = "image/play.png";
+            play_img.src = "main/image/play.png";
         }
        song.addEventListener('ended',function(){
             song.currentTime = 0
             song.pause();
             isPlaying = false;
             range.value = 0;
-            play_img.src = "image/play.png";
+            play_img.src = "main/image/play.png";
         })
         song.addEventListener('timeupdate',function(){
             range.value = song.currentTime;
